@@ -14,7 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  raise TriangleError, "Such triangle cannot be" if [a, b, c].sum - [a, b, c].max <= [a, b, c].max
+  return :equilateral if a == b && a == c && b == c
+  return :isosceles if a == b || a == c || b == c
+  :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
